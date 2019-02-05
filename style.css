@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+  background: url(img/montagne.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 20px;
+}
+
+body{
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  place-items: center center;
+}
+
+.row{
+  background-color: white;
+}
+
+div.row{
+  margin-bottom: 0px;
+}
+
+
+.col.s6.droite{
+  padding: 70px 130px 70px 130px;
+}
+
+h4{
+  font-weight: bold;
+  margin: 0px 0px 0px 0px;
+}
+
+p{
+  margin: 5px 0px 20px 0px;
+  color: grey;
+}
+
+div.col.s6.gauche {
+  height: 820px;
+  padding: 0px;
+  background-position: top center;
+  background-size: cover;
+  background-image: url(img/image.jpg);
+}
+
+button.btn.pulse{
+  width: 100%;
+  border-radius: 50px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscription</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  </head>
+
+<body>
+  <div class="container hoverable">
+    <div class="row">
+      <div class="col s6 gauche">
+      </div>
+
+        <div class="col s6 droite">
+          <h4>Bienvenue chez vous !</h4>
+          <p>Créer votre compte en quelques secondes</p>
+
+      <form>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="Sarah" id="first_name" type="text" class="validate" required>
+              <label for="first_name">Prénom</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="Lakal" id="last_name" type="text" class="validate" required>
+              <label for="last_name">Nom</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" placeholder="sarah@gmail.com" required>
+              <label for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="text" class="validate" placeholder="**********" required>
+              <progress max="100" value="0" id="strength" style="width:100%;"></progress>
+
+              <label for="password">Mot de passe</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" placeholder="**********" required>
+              <label for="password">Confirmation</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <p><label><input type="checkbox" required /> <span class="blue-text">J'accepte les conditions d'utilisations</span></label></p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <button class="btn pulse" type="submit" name="action">Envoyer</button>
+            </div>
+          </div>
+
+        </form>
+        </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+  var pass = document.getElementById("password")
+  pass.addEventListener('keyup', function() {
+    checkPassword(pass.value)
+  })
+
+  function checkPassword(password) {
+    var strengthBar = document.getElementById("strength")
+    var strength = 0;
+    if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
+      strength += 1
+    }
+    if (password.match(/[~<>?]+/)) {
+      strength += 1
+    }
+    if (password.match(/[!@£%^&*()]+/)) {
+      strength += 1
+    }
+    if (password.length > 5) {
+      strength += 1
+    }
+    switch(strength) {
+      case 0:
+        strengthBar.value = 20;
+        break
+
+      case 1:
+        strengthBar.value = 40;
+        break
+
+      case 2:
+        strengthBar.value = 60;
+        break
+
+      case 3:
+        strengthBar.value = 80;
+        break
+
+      case 4:
+        strengthBar.value = 100;
+        break
+    }
+  }
+
+  </script>
+
+</body>
+</html>
